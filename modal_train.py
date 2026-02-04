@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Modal deployment for Heiretsu distributed training.
+Modal deployment for moe-4d-parallel-minimal distributed training.
 
 Run with:
     modal run modal_train.py
@@ -13,7 +13,7 @@ from pathlib import Path
 LOCAL_DIR = Path(__file__).parent
 
 # Modal app definition
-app = modal.App("heiretsu-training")
+app = modal.App("moe-4d-parallel-training")
 
 # Docker image with all dependencies + local code
 image = (
@@ -124,14 +124,14 @@ def train():
         f"--num_train_chunks={cfg['num_train_chunks']}",
         f"--num_val_chunks={cfg['num_val_chunks']}",
         "--wandb",
-        "--wandb_project=heiretsu-moe-training",
+        "--wandb_project=moe-4d-parallel-training",
         "--wandb_mode=online",
-        "--run_name=heiretsu-moe-8k2-tp-fix",
+        "--run_name=moe-4d-parallel-8e-k2",
         "--seed=1337",
     ]
     
     print("=" * 60)
-    print("Heiretsu Training with TP Seeding Fix")
+    print("moe-4d-parallel-minimal Training")
     print("=" * 60)
     print(f"Config: DP={cfg['dp']} TP={cfg['tp']} PP={cfg['pp']} EP={cfg['ep']}")
     print(f"Model: {cfg['n_layer']}L {cfg['n_head']}H {cfg['n_embed']}D")
@@ -148,8 +148,8 @@ def train():
 @app.local_entrypoint()
 def main():
     """Entry point for `modal run modal_train.py`."""
-    print("Starting Heiretsu training on Modal...")
-    print("Using TP seeding fix (SmolLM3 Playbook)")
+    print("Starting moe-4d-parallel-minimal training on Modal...")
+    print("4D Parallelism: DP + TP + PP + EP with MoE")
     print("=" * 60)
     
     returncode = train.remote()

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Change to the heiretsu project root (parent of tests/)
+# Change to the moe-4d-parallel-minimal project root (parent of tests/)
 cd "$(dirname "$0")/.."
 
 # Suppress NCCL P2P serialization warning (informational, not an error)

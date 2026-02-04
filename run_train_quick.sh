@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# Heiretsu Quick Training Test (5 mins)
+# moe-4d-parallel-minimal Quick Training Test (5 mins)
 # Verifies the full training pipeline works before a long run
 # ============================================================================
 set -euo pipefail
@@ -17,8 +17,8 @@ export EVAL_INTERVAL=50
 export SAVE_INTERVAL=0
 export DROPOUT=0.1
 export AMP=bf16
-export RUN_NAME="heiretsu-quicktest-$(date +%H%M%S)"
-export WANDB_PROJECT="heiretsu-test"
+export RUN_NAME="moe-4d-quicktest-$(date +%H%M%S)"
+export WANDB_PROJECT="moe-4d-parallel-test"
 
 # Use data parallel only for simplicity
 export DP=4

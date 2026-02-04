@@ -6,7 +6,7 @@
 |-------|---------|
 | **Objective** | Master Data Parallelism (DP), Tensor Parallelism (TP), Pipeline Parallelism (PP), and Expert Parallelism (EP) through hands-on implementation |
 | **Course** | [Scratch to Scale](https://maven.com/walk-with-code/scratch-to-scale) by Zachary Mueller |
-| **Codebase** | [heiretsu](.) - Minimal 3D/4D parallelism in pure PyTorch |
+| **Codebase** | [moe-4d-parallel-minimal](https://github.com/thefirehacker/moe-4d-parallel-minimal) - Minimal 4D parallelism with MoE in pure PyTorch |
 | **Duration** | 4 weeks (matching course) + bonus content |
 | **Prerequisites** | PyTorch basics, single-GPU training experience, basic Python |
 
@@ -14,7 +14,7 @@
 
 ## Learning Philosophy
 
-This plan bridges **theory** (course lectures) with **practice** (heiretsu codebase):
+This plan bridges **theory** (course lectures) with **practice** (moe-4d-parallel-minimal codebase):
 
 ```
 ┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
@@ -80,7 +80,7 @@ global_rank = dp*(EP*PP*TP) + ep*(PP*TP) + pp*TP + tp
 ## Codebase Architecture
 
 ```
-heiretsu/
+moe-4d-parallel-minimal/
 ├── train.py          # Main entry: training loop, integrates all parallelism
 ├── gpt_model.py      # Model: GPT with TP/MoE support
 ├── topo.py           # Topology: process group management (DP/EP/TP/PP)

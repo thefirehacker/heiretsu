@@ -19,7 +19,7 @@ By completing this phase, you will:
 
 ## ⚠️ Theory-Only Phase
 
-**Note:** The heiretsu codebase implements **manual DP**, not ZeRO/FSDP. This phase is theory-focused using course content.
+**Note:** The moe-4d-parallel-minimal codebase implements **manual DP**, not ZeRO/FSDP. This phase is theory-focused using course content.
 
 **Why?** The codebase prioritizes understanding fundamentals. ZeRO/FSDP abstracts away details that TP/PP make explicit.
 
@@ -122,7 +122,7 @@ Before (DP):                    After (ZeRO-1):
 
 ---
 
-## Why Heiretsu Uses Manual DP
+## Why This Codebase Uses Manual DP
 
 The codebase teaches parallelism **fundamentals**:
 

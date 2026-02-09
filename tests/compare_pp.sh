@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DATA_DIR="${DATA_DIR:-/root/heiretsu/heiretsu/data/fineweb10B}"
+DATA_DIR="${DATA_DIR:-./data/fineweb10B}"
 B=${B:-4}
 T=${T:-32}
 SEED=${SEED:-1234}

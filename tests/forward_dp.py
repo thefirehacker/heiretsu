@@ -7,7 +7,7 @@ from gpt_model import GPT, GPTConfig
 from train import RandomBatchLoader
 
 # settings
-DATA_DIR = os.environ.get("DATA_DIR", "/root/heiretsu/heiretsu/data/fineweb10B")
+DATA_DIR = os.environ.get("DATA_DIR", "./data/fineweb10B")
 B = int(os.environ.get("B", 4))
 T = int(os.environ.get("T", 32))
 SEED = int(os.environ.get("SEED", 1234))

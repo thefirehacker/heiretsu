@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# Heiretsu Large Training Run
+# moe-4d-parallel-minimal Training Run
 # 4-GPU training with FineWeb10B data and wandb logging
 # ============================================================================
 set -euo pipefail
@@ -65,15 +65,15 @@ SAVE_INTERVAL=${SAVE_INTERVAL:-5000}
 DATA_DIR=${DATA_DIR:-data/fineweb10B}
 
 # Logging
-RUN_NAME=${RUN_NAME:-"heiretsu-gpt2m-4gpu-$(date +%Y%m%d_%H%M%S)"}
-WANDB_PROJECT=${WANDB_PROJECT:-"heiretsu-fineweb"}
+RUN_NAME=${RUN_NAME:-"moe-4d-gpt2m-$(date +%Y%m%d_%H%M%S)"}
+WANDB_PROJECT=${WANDB_PROJECT:-"moe-4d-parallel-training"}
 
 # Compute effective batch size
 WORLD_SIZE=$((DP * TP * PP * EP))
 EFFECTIVE_BATCH=$((BATCH_SIZE * GRAD_ACCUM * DP))
 
 echo "============================================================================"
-echo "Heiretsu Training Run: ${RUN_NAME}"
+echo "moe-4d-parallel-minimal Training: ${RUN_NAME}"
 echo "============================================================================"
 echo ""
 echo "Parallelism: DP=${DP} TP=${TP} PP=${PP} EP=${EP} (world_size=${WORLD_SIZE})"

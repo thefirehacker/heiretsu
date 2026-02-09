@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DATA_DIR="${DATA_DIR:-/home/t-ckarkar/heiretsu/heiretsu/data/fineweb10B}"
+DATA_DIR="${DATA_DIR:-./data/fineweb10B}"
 STEPS=${STEPS:-5}
 GLOBAL_BS=${GLOBAL_BS:-64}
 BLOCK_SIZE=${BLOCK_SIZE:-512}
